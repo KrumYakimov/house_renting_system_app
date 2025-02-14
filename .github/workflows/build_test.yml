@@ -26,4 +26,4 @@ jobs:
     - name: Build
       run: dotnet build HouseRentingSystem.Services/HouseRentingSystem.sln --no-restore
     - name: Run Unit and Integration Tests
-      run: dotnet test --no-build --verbosity normal
+      run: dotnet test HouseRentingSystem.Services/HouseRentingSystem.sln --no-build --verbosity normal
