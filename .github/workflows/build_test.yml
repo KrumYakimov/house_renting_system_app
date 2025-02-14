@@ -22,8 +22,8 @@ jobs:
       with:
         dotnet-version: 6.0.x
     - name: Restore dependencies
-      run: dotnet restore HouseRentingSystem.Services/HouseRentingSystem.sln
+      run: dotnet restore house_renting_system_app/blob/main/HouseRentingSystem.Services/HouseRentingSystem.sln
     - name: Build
-      run: dotnet build HouseRentingSystem.Services/HouseRentingSystem.sln --no-restore
+      run: dotnet build house_renting_system_app/blob/main/HouseRentingSystem.Services/HouseRentingSystem.sln --no-restore
     - name: Run Unit and Integration Tests
-      run: dotnet test HouseRentingSystem.Services/HouseRentingSystem.sln --no-build --verbosity normal
+      run: dotnet test house_renting_system_app/blob/main/HouseRentingSystem.Services/HouseRentingSystem.sln --no-build --verbosity normal
