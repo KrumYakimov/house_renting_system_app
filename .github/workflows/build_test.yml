@@ -13,18 +13,18 @@ jobs:
     - name: Checkout the repository
       uses: actions/checkout@v4
 
-    - name: Setup .NET
+    - name: Setup .NET (Install Required Versions)
       uses: actions/setup-dotnet@v4
       with:
-        otnet-version: |
+        dotnet-version: |
           6.0.x
           8.0.x
 
     - name: Restore dependencies
-      run: dotnet restore
+      run: dotnet restore HouseRentingSystem.sln
 
     - name: Build
-      run: dotnet build --no-restore
+      run: dotnet build HouseRentingSystem.sln --no-restore
 
     - name: Run Unit and Integration Tests
-      run: dotnet test --verbosity normal
+      run: dotnet test HouseRentingSystem.sln --no-build --verbosity normal
