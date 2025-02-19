@@ -2,14 +2,19 @@ pipeline {
     agent any
 
     environment {
-        DOTNET_VERSION_1 = '6.0.x'
-        DOTNET_VERSION_2 = '8.0.x'
+        PATH = "/root/.dotnet:$PATH"
     }
 
     stages {
         stage('Checkout') {
             steps {
                 checkout scm
+            }
+        }
+
+        stage('Verify .NET Installation') {
+            steps {
+                sh 'dotnet --info'
             }
         }
 
